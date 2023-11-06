@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<!-- Change code below this line -->
+<body class="bg-[url('https://cdn.pixabay.com/photo/2018/03/02/19/21/nature-3194001_640.jpg')] w-full  bg-cover bg-center bg-no-repeat flex justify-center items-center min-h-screen p-6 mx-auto ">
+ <div class="flex flex-col gap-4 text-green-500 p-4 bg-gradient-to-tr from-teal-700/90 to-green-400/20 absolute items-center md:min-w-[800px]">
+    <h1 class="text-6xl font-bold uppercase"> Trip to Kenya</h1>
+    <p id="leo" class=""></p>
+    <!-- countdown timer -->
+    <div class="flex text-2xl gap-3 font-bold text-center">
+    <!-- days -->
+    <div class="bg-transparent">
+        <p id="days" class="bg-transparent p-4 border border-lg rounded-l-xl text-white  w-[110px]">00</p>
+        <small>Days</small>
+    </div>
+    <!-- hours -->
+    <div >
+        <p id="hours" class="bg-transparent p-4 border text-white w-[110px] ">00</p>
+        <span>Hours</span>
+    </div>
+    <!-- minutes -->
+    <div >
+        <p id="minutes" class="bg-transparent p-4 border text-white w-[110px]">00</p>
+        <span>Minutes</span>
+    </div>
+    <!-- seconds -->
+    <div >
+        <p id="seconds" class="bg-transparent p-4 border text-white rounded-r-xl w-[110px]" >00</p>
+        <span>Seconds</span>
+    </div>
+ </div>
+ <!-- end of countdown -->
+ <small class="text-white text-center p-4 w-[500px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo corrupti, amet tempore ipsam laudantium, aspernatur consequuntur provident, iste et est odit mollitia sit dignissimos vel voluptatibus sint eum atque debitis.</small>
+
+ <script>
+    // Set the countdown date
+    const countDownDate = new Date("2024-01-01T00:00:00");
+
+    // Update the countdown clock every second
+    function updateCountdown() {
+      // Get the current time
+      const now = new Date();
+
+      // Calculate the difference between the current time and the countdown date
+      const diff = countDownDate - now;
+
+      // Convert the difference to days, hours, minutes, and seconds
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      // Update the countdown clock elements
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      
+    }
+
+    // Start the countdown clock
+    setInterval(updateCountdown, 1000);
+    if(diff<0){
+        clearInterval(updateCountdown)
+        document.getElementById("days").innerHTML = 0;
+      document.getElementById("hours").innerHTML = 0;
+      document.getElementById("minutes").innerHTML = 0;
+      document.getElementById("seconds").innerHTML = 0;
+      }
+  </script>
+</body>
+<!-- Change code above this line -->
+
+</html>
